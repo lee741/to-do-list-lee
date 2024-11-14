@@ -16,7 +16,7 @@ A simple and intuitive To-Do List app that allows users to add, manage, and remo
 
 
 ## Tech Stack
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** HTML, CSS, JavaScript ES6
 - **Backend (optional):** Node.js (if you plan on storing data remotely)
 - **Local Storage:** Used for persistent task storage (if you're using local storage)
 - **Libraries/Frameworks:** React (if applicable)
