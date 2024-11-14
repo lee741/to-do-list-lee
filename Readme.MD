@@ -9,11 +9,11 @@ A simple and intuitive To-Do List app that allows users to add, manage, and remo
 - Store tasks persistently across app sessions.
 - Clear all completed tasks.
 
-## Screenshots
+## Screenshot
 
 ![Screenshot](https://github.com/lee741/my-node-project-main/blob/development/Screenshot%20(29).png)
 
-*(Replace with actual screenshot of your app)*
+
 
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
