@@ -11,7 +11,7 @@ A simple and intuitive To-Do List app that allows users to add, manage, and remo
 
 ## Screenshots
 
-![To-Do List Screenshot](path/to/screenshot.png)
+![Screenshot](https://github.com/lee741/my-node-project-main/blob/development/Screenshot%20(29).png)
 
 *(Replace with actual screenshot of your app)*
 
