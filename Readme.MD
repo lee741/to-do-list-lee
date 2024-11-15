@@ -17,9 +17,8 @@ A simple and intuitive To-Do List app that allows users to add, manage, and remo
 
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript ES6
-- **Backend (optional):** Node.js (if you plan on storing data remotely)
-- **Local Storage:** Used for persistent task storage (if you're using local storage)
-- **Libraries/Frameworks:** React (if applicable)
+- **Backend:** Node.js 
+
 
 ## Installation
 
@@ -28,5 +27,5 @@ To install and run the To-Do List app locally:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/lee741/my-node-project-main.git
-   cd my-node-project-main 
+   git clone https://github.com/lee741/to-do-list-lee.git
+   cd to-do-list-lee 
