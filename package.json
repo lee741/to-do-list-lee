@@ -1,7 +1,7 @@
 {
   "name": "my-node-project",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "script.js",
    "type": "module",
   "scripts": {
     "test": "echo \"Error: no test was specified\" && exit 1"
