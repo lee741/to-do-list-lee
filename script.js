@@ -399,11 +399,11 @@ let categories = [
   cancelBtn.addEventListener("click", toggleAddTaskForm);
   
   // Render initial state
-/*  getLocal();
+  getLocal();
   renderTasks();
   categories.forEach((category) => {
     const option = document.createElement("option");
     option.value = category.title.toLowerCase();
     option.textContent = category.title;
     categorySelect.appendChild(option);
-  });*/
+  });
