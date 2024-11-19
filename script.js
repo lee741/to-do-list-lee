@@ -187,7 +187,88 @@ let categories = [
     },
     // Add more tasks for each category as desired
   ];
-  
+    
+    
+
+app.use(express.json());
+app.use(express.static("public"));
+
+app.get('/tasks', (req, res) => {
+    res.json(tasks);
+});
+
+app.get('/task-counts', (req, res) => {
+    const totalTasks = tasks.length;
+    const completedTasks = tasks.filter(task => task.completed).length;
+    const pendingTasks = totalTasks - completedTasks;
+    const completionPercentage = totalTasks > 0 ? (completedTasks / totalTasks * 100).toFixed(2) : 0;
+
+    res.json({
+        totalTasks,
+        completedTasks,
+        pendingTasks,
+        completionPercentage
+    });
+});
+
+app.post('/tasks', (req, res) => {
+    const { task } = req.body;
+    if (task) {
+        const newTask = {
+            id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
+            text: task,
+            completed: false,
+            important: false,
+        };
+        tasks.push(newTask);
+        res.status(201).json(newTask);
+    } else {
+        res.status(400).json({ error: 'Task is required' });
+    }
+});
+
+app.delete('/tasks/:id', (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const index = tasks.findIndex(todo => todo.id === id);
+    if (index !== -1) {
+        const removed = tasks.splice(index, 1);
+        res.json({ message: 'Task deleted', removed, tasks });
+    } else {
+        res.status(404).json({ message: 'Task not found' });
+    }
+});
+
+app.patch('/tasks/:id/complete', (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const todo = tasks.find(todo => todo.id === id);
+    if (todo) {
+        todo.completed = !todo.completed;
+        res.json({ message: 'Task status updated', task: todo });
+    } else {
+        res.status(404).json({ message: 'Task not found' });
+    }
+});
+
+app.patch('/tasks/:id/important', (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const todo = tasks.find(todo => todo.id === id);
+    if (todo) {
+        todo.important = !todo.important;
+        res.json({ message: 'Task priority updated', task: todo });
+    } else {
+        res.status(404).json({ message: 'Task not found' });
+    }
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+
+
+
+///OLD
+  /*
   // Define functions
   const saveLocal = () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -406,4 +487,4 @@ let categories = [
     option.value = category.title.toLowerCase();
     option.textContent = category.title;
     categorySelect.appendChild(option);
-  });
+  });*/
